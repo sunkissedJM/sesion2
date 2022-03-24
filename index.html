@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Port+Lligat+Slab&display=swap" rel="stylesheet">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background: rgb(216,200,209);
+                color: rgb(51,47,33) ;
+                font-family: 'Port Lligat Slab', serif;
+                font-weight:300;
+            }
+            div {
+                padding: 2rem;
+            }
+            h1 {
+              font-size: calc(2rem + 10vw);
+              font-weight:900;
+              padding:0 0 1.5rem 0;
+
+            }
+
+            p {
+
+                padding: 1rem 0;
+            }
+            em{
+              font-style:normal;
+              font-weight:600;
+            }
+            @media (min-width: 800px) {
+                p {
+                    max-width: 60%;
+                }
+            }
+        </style>
+        <title>Hola</title>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
+            integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+    </head>
+    <body>
+        <div>
+            <h1> <span id="saludo"></span> Me llamo <span id="nombre"></span></h1>
+            <p>Tomé este electivo porque me interesa aprender más sobre desarrollo web, ya que me gustó con lo poco que me enseñaron en herramientas computacionales el año pasado.</p>
+            <p>Vine a la segunda sesión porque como dije anteriormente me interesa el ramo además que si no vengo a clases me perderé el avance y más adelante me puede ir muy mal.</p>
+        </div>
+        <script>
+          var opciones = ["Hola.","Hello.","Hi.","Tiempo sin verte.","Nos volvemos a ver."]
+            function setup() {
+                createCanvas(windowWidth - 40, windowHeight - 40)
+                    .position(20, 20)
+                    .style("z-index", -1);
+                document.getElementById("nombre").textContent += "Tamara";
+                document.getElementById("saludo").textContent += random(opciones);
+            }
+            function draw() {
+              
+                background(201,128,158);
+                fill(20);
+                textSize(100);
+                text("🧜",mouseX,mouseY);
+                ellipse(mouseX+50,mouseY+50, 100,10);
+            }
+            function windowResized() {
+                resizeCanvas(windowWidth - 40, windowHeight - 40);
+            }
+        </script>
+    </body>
+</html>
